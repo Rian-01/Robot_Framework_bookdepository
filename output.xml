@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.9.6 on darwin)" generated="20230402 23:34:15.720" rpa="false" schemaversion="3">
+<suite id="s1" name="testCase" source="/Users/qa_yakes/Desktop/robotFm/Test_case/testCase.robot">
+<test id="s1-t1" name="Low to High Price Screening" line="9">
+<kw name="Load bookdepository in browser" library="priceFilter">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${base_url}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230402 23:34:15.818" level="INFO">Opening browser 'Chrome' to base url 'https://www.bookdepository.com'.</msg>
+<status status="PASS" starttime="20230402 23:34:15.818" endtime="20230402 23:34:24.266"/>
+</kw>
+<status status="PASS" starttime="20230402 23:34:15.818" endtime="20230402 23:34:24.267"/>
+</kw>
+<kw name="Visit the bestseller menu" library="priceFilter">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${bestSeller}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230402 23:34:24.268" endtime="20230402 23:34:24.288"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${bestSeller}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230402 23:34:24.289" level="INFO">Clicking element 'css:[href="/bestsellers"]'.</msg>
+<status status="PASS" starttime="20230402 23:34:24.288" endtime="20230402 23:34:26.834"/>
+</kw>
+<status status="PASS" starttime="20230402 23:34:24.267" endtime="20230402 23:34:26.835"/>
+</kw>
+<kw name="Price and availability screening" library="priceFilter">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${filterPrice}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230402 23:34:26.836" endtime="20230402 23:34:26.858"/>
+</kw>
+<kw name="Select From List By Index" library="SeleniumLibrary">
+<arg>${filterPrice}</arg>
+<arg>2</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<msg timestamp="20230402 23:34:26.858" level="INFO">Selecting options from selection list 'id:filterPrice' by index 2.</msg>
+<status status="PASS" starttime="20230402 23:34:26.858" endtime="20230402 23:34:26.912"/>
+</kw>
+<kw name="Select From List By Index" library="SeleniumLibrary">
+<arg>${filterAvailability}</arg>
+<arg>1</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<msg timestamp="20230402 23:34:26.912" level="INFO">Selecting options from selection list 'id:filterAvailability' by index 1.</msg>
+<status status="PASS" starttime="20230402 23:34:26.912" endtime="20230402 23:34:26.954"/>
+</kw>
+<status status="PASS" starttime="20230402 23:34:26.835" endtime="20230402 23:34:26.954"/>
+</kw>
+<kw name="Click button Refine results &amp; Validation data" library="priceFilter">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${button_result}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230402 23:34:26.955" level="INFO">Clicking element 'css:[class="btn btn-primary"]'.</msg>
+<status status="PASS" starttime="20230402 23:34:26.955" endtime="20230402 23:34:28.242"/>
+</kw>
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<arg>${validation_info}</arg>
+<arg>Showing 1 to 30 of</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" starttime="20230402 23:34:28.243" endtime="20230402 23:34:28.261"/>
+</kw>
+<status status="PASS" starttime="20230402 23:34:26.954" endtime="20230402 23:34:28.261"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230402 23:34:28.261" endtime="20230402 23:34:28.336"/>
+</kw>
+<doc>Low to High Price Screening at bestsellers menu</doc>
+<status status="PASS" starttime="20230402 23:34:15.817" endtime="20230402 23:34:28.336"/>
+</test>
+<test id="s1-t2" name="Add and Remove book items from Cart" line="17">
+<kw name="Load bookdepository in browser" library="priceFilter">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${base_url}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230402 23:34:28.338" level="INFO">Opening browser 'Chrome' to base url 'https://www.bookdepository.com'.</msg>
+<status status="PASS" starttime="20230402 23:34:28.337" endtime="20230402 23:34:34.799"/>
+</kw>
+<status status="PASS" starttime="20230402 23:34:28.337" endtime="20230402 23:34:34.799"/>
+</kw>
+<kw name="Find a book of interest and View details" library="itemCart">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${item_book1}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230402 23:34:34.800" endtime="20230402 23:34:34.821"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${item_book1}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230402 23:34:34.821" level="INFO">Clicking element 'css:[href="/Daisy-Jones-Six-Taylor-Jenkins-Reid/9781787462144?ref=grid-view"]'.</msg>
+<status status="PASS" starttime="20230402 23:34:34.821" endtime="20230402 23:34:37.791"/>
+</kw>
+<status status="PASS" starttime="20230402 23:34:34.800" endtime="20230402 23:34:37.792"/>
+</kw>
+<kw name="Add to Cart the selected book" library="itemCart">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${add_cart}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230402 23:34:37.793" endtime="20230402 23:34:37.817"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${add_cart}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230402 23:34:37.817" level="INFO">Clicking element 'css:[href="/basket/addisbn/isbn13/9781787462144"]'.</msg>
+<status status="PASS" starttime="20230402 23:34:37.817" endtime="20230402 23:34:37.848"/>
+</kw>
+<status status="PASS" starttime="20230402 23:34:37.792" endtime="20230402 23:34:37.848"/>
+</kw>
+<kw name="Visit my cart" library="itemCart">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${go_to_Cart}</arg>
+<arg>timeout=2</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230402 23:34:37.849" endtime="20230402 23:34:38.507"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${go_to_Cart}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230402 23:34:38.508" level="INFO">Clicking element 'css:[class="btn btn-primary pull-right continue-to-basket string-to-localize link-to-localize"]'.</msg>
+<status status="PASS" starttime="20230402 23:34:38.508" endtime="20230402 23:34:43.511"/>
+</kw>
+<status status="PASS" starttime="20230402 23:34:37.849" endtime="20230402 23:34:43.512"/>
+</kw>
+<kw name="Delete book items to empty the cart" library="itemCart">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${button_remove_Cart}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230402 23:34:43.513" endtime="20230402 23:34:43.544"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${button_remove_Cart}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230402 23:34:43.545" level="INFO">Clicking element 'css:[class="btn remove-btn"]'.</msg>
+<status status="PASS" starttime="20230402 23:34:43.545" endtime="20230402 23:34:45.728"/>
+</kw>
+<status status="PASS" starttime="20230402 23:34:43.512" endtime="20230402 23:34:45.728"/>
+</kw>
+<kw name="Validate that my basket is empty" library="itemCart">
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<arg>${validation_cart}</arg>
+<arg>Your basket is empty.</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" starttime="20230402 23:34:45.730" endtime="20230402 23:34:45.765"/>
+</kw>
+<status status="PASS" starttime="20230402 23:34:45.729" endtime="20230402 23:34:45.765"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230402 23:34:45.765" endtime="20230402 23:34:45.844"/>
+</kw>
+<doc>Selection of books in the shopping cart</doc>
+<status status="PASS" starttime="20230402 23:34:28.337" endtime="20230402 23:34:45.845"/>
+</test>
+<test id="s1-t3" name="Whishlist book" line="27">
+<kw name="Load bookdepository in browser" library="priceFilter">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${base_url}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230402 23:34:45.846" level="INFO">Opening browser 'Chrome' to base url 'https://www.bookdepository.com'.</msg>
+<status status="PASS" starttime="20230402 23:34:45.846" endtime="20230402 23:34:50.700"/>
+</kw>
+<status status="PASS" starttime="20230402 23:34:45.846" endtime="20230402 23:34:50.704"/>
+</kw>
+<kw name="Select the book of interest" library="wishList">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${item_book2}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230402 23:34:50.705" endtime="20230402 23:34:50.721"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${item_book2}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230402 23:34:50.721" level="INFO">Clicking element 'css:[href="/It-Ends-With-Us-most-heartbreaking-novel-youll-ever-read-Colleen-Hoover/9781471156267?ref=grid-view"]'.</msg>
+<status status="PASS" starttime="20230402 23:34:50.721" endtime="20230402 23:34:54.498"/>
+</kw>
+<status status="PASS" starttime="20230402 23:34:50.705" endtime="20230402 23:34:54.499"/>
+</kw>
+<kw name="Add books to wishlist" library="wishList">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${add_wishlist}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230402 23:34:54.500" endtime="20230402 23:34:54.536"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${add_wishlist}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230402 23:34:54.537" level="INFO">Clicking element 'css:[href="/account/wishlistItemUpdate?mainAction=add&amp;isbn13=9781471156267"]'.</msg>
+<status status="PASS" starttime="20230402 23:34:54.536" endtime="20230402 23:34:54.564"/>
+</kw>
+<status status="PASS" starttime="20230402 23:34:54.499" endtime="20230402 23:34:54.565"/>
+</kw>
+<kw name="It can be validated that I am not logged in" library="wishList">
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<arg>${validate_login}</arg>
+<arg>Not logged in</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" starttime="20230402 23:34:54.565" endtime="20230402 23:34:55.224"/>
+</kw>
+<status status="PASS" starttime="20230402 23:34:54.565" endtime="20230402 23:34:55.224"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230402 23:34:55.224" endtime="20230402 23:34:55.301"/>
+</kw>
+<doc>A wish list of book items to buy when you have the funds</doc>
+<status status="PASS" starttime="20230402 23:34:45.845" endtime="20230402 23:34:55.302"/>
+</test>
+<doc>Technical Test</doc>
+<status status="PASS" starttime="20230402 23:34:15.721" endtime="20230402 23:34:55.303"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="testCase">testCase</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
