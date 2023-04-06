@@ -9,6 +9,7 @@ Resource    ../resouce//pageSource/wishList.robot
 Low to High Price Screening
     [Documentation]  Low to High Price Screening at bestsellers menu
     Load bookdepository in browser
+    Close Annoucement
     Visit the bestseller menu
     Price and availability screening
     Click button Refine results & Validation data
@@ -17,6 +18,7 @@ Low to High Price Screening
 Add and Remove book items from Cart
     [Documentation]  Selection of books in the shopping cart
     Load bookdepository in browser
+    Close Annoucement
     Find a book of interest and View details
     Add to Cart the selected book
     Visit my cart
@@ -27,6 +29,7 @@ Add and Remove book items from Cart
 Whishlist book
     [Documentation]  A wish list of book items to buy when you have the funds
     Load bookdepository in browser
+    Close Annoucement
     Select the book of interest
     Add books to wishlist
     It can be validated that I am not logged in

@@ -5,6 +5,7 @@ Library    SeleniumLibrary
 
 *** Variables ***
 ${base_url}    https://www.bookdepository.com
+${closeannounce}    css:[class="close"]
 ${bestSeller}    css:[href="/bestsellers"]
 ${filterPrice}    id:filterPrice
 ${filterAvailability}    id:filterAvailability

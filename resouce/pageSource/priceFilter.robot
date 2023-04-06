@@ -6,6 +6,10 @@ Resource    source.robot
 *** Keywords ***
 Load bookdepository in browser
     Open Browser  ${base_url}  Chrome
+
+Close Annoucement
+    Wait Until Element Is Visible    ${closeannounce}    timeout=5
+    Click Element    ${closeannounce}
 Visit the bestseller menu
     Wait Until Element Is Visible  ${bestSeller}  timeout=5
     Click Element  ${bestSeller}
